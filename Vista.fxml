@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.CarCompanyController">
+    <children>
+        <Label text="Registro de Empleados y Ventas" style="-fx-font-size: 20px;"/>
+        <GridPane hgap="10" vgap="10">
+            <children>
+                <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="nombreField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                
+                <Label text="Apellido:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="apellidoField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                
+                <Label text="ID Empleado:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="idEmpleadoField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                
+                <Label text="Ventas:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <TextField fx:id="ventasField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                
+                <HBox spacing="10" GridPane.rowIndex="4" GridPane.columnIndex="1">
+                    <children>
+                        <Button text="Agregar" onAction="#handleAgregarEmpleado"/>
+                        <Button text="Eliminar" onAction="#handleEliminarEmpleado"/>
+                    </children>
+                </HBox>
+            </children>
+        </GridPane>
+        
+        <TableView fx:id="empleadosTable">
+            <columns>
+                <TableColumn fx:id="nombreColumn" text="Nombre"/>
+                <TableColumn fx:id="apellidoColumn" text="Apellido"/>
+                <TableColumn fx:id="idEmpleadoColumn" text="ID Empleado"/>
+                <TableColumn fx:id="ventasColumn" text="Ventas"/>
+            </columns>
+        </TableView>
+    </children>
+</VBox>
